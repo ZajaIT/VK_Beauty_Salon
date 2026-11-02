@@ -1351,10 +1351,15 @@ html {
 
 .salon-gallery {
     grid-template-columns: 1fr;
+    gap: 16px;
 }
 
 .salon-gallery img {
     height: 280px;
+}
+
+.salon-gallery img:nth-child(even) {
+    transform: none;
 }
 
 /* O MNĚ – MOBIL */
@@ -1425,8 +1430,11 @@ html {
 }
 
 .contact-item {
-    width: 225px;
-    max-width: 100%;
+    width: 100%;
+    max-width: none;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 
 .contact h2 {
