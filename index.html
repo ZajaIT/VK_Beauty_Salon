@@ -1438,12 +1438,37 @@ html {
 }
 
 .contact-info .contact-item:first-of-type {
+    position: relative;
+    display: flex;
+    justify-content: center;
     align-items: flex-start;
+    gap: 0;
 }
 
 .contact-info .contact-item:first-of-type svg {
-    align-self: flex-start;
-    margin-top: 1px;
+    display: none;
+}
+
+.contact-info .contact-item:first-of-type a {
+    text-align: center;
+}
+
+.contact-info .address-first-line {
+    position: relative;
+    display: inline-block;
+}
+
+.contact-info .address-first-line::before {
+    content: "";
+    position: absolute;
+    right: calc(100% + 8px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 21px;
+    height: 21px;
+    background: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z' fill='none' stroke='black' stroke-width='1.7'/%3E%3Ccircle cx='12' cy='10' r='2.5' fill='none' stroke='black' stroke-width='1.7'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z' fill='none' stroke='black' stroke-width='1.7'/%3E%3Ccircle cx='12' cy='10' r='2.5' fill='none' stroke='black' stroke-width='1.7'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 .contact h2 {
     font-size: 26px;
@@ -1934,7 +1959,7 @@ html {
                 </svg>
                <a href="https://www.google.com/maps/search/?api=1&amp;query=Svojs%C3%ADkova%201348%2C%20Mlad%C3%A1%20Boleslav"
    target="_blank" rel="noopener noreferrer">
-    RC U Souseda<br>
+    <span class="address-first-line">RC U Souseda</span><br>
     Svojsíkova 1348<br>
     293 02 Mladá Boleslav
 </a>
