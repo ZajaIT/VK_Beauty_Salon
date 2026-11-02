@@ -1,0 +1,2137 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VK Beauty Salon | Masáže a formování postavy | Mladá Boleslav</title>
+<meta name="description" content="VK Beauty Salon v Mladé Boleslavi. Masáže a ošetření zaměřená na formování postavy a péči o tělo.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* ======================================
+   ZÁKLAD
+====================================== */
+
+:root {
+    --gold: #b68432;
+    --gold-dark: #966922;
+    --black: #171717;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--black);
+    background: var(--white);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font: inherit;
+}
+
+/* ======================================
+   NAVBAR – PC
+====================================== */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: #fff;
+}
+
+.nav-container {
+    max-width: 1200px;
+    height: 70px;
+    margin: auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.nav-logo img {
+    width: 110px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 44px;
+}
+
+.nav-menu a {
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 0;
+    transition: color .25s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.nav-menu a:hover {
+    color: var(--gold-dark);
+}
+
+.nav-menu a::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform .25s ease;
+}
+
+.nav-menu a:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-cta {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 35px;
+    padding: 0 22px;
+    background: linear-gradient(90deg, #80551D 0%, #B68432 55%, #C69A4B 100%);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background .25s ease;
+    border-radius: 3px;
+}
+
+.nav-cta,
+.hero-button {
+    position: relative;
+    isolation: isolate;
+}
+
+.nav-cta::before,
+.hero-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        90deg,
+        #684216 0%,
+        #98691F 55%,
+        #B68432 100%
+    );
+    opacity: 0;
+    transition: opacity .3s ease;
+    border-radius: inherit;
+}
+
+.nav-cta:hover::before,
+.hero-button:hover::before {
+    opacity: 1;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+/* ======================================
+   HERO – PC
+====================================== */
+
+.hero {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 1;
+    min-height: 0;
+    background-image: url("hero.webp");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 55px 30px 75px;
+}
+
+.hero-content {
+    max-width: 570px;
+}
+
+.hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--gold-dark);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 17px;
+}
+
+.hero-eyebrow::after {
+    content: "";
+    width: 55px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.hero h1 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: clamp(38px, 3.8vw, 51px);
+    font-weight: 400;
+    line-height: 1.16;
+    letter-spacing: 0;
+    margin-bottom: 22px;
+}
+
+.hero-description {
+    max-width: 450px;
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    min-height: 49px;
+    padding: 0 28px;
+    background: linear-gradient(90deg, #80551D 0%, #B68432 55%, #C69A4B 100%);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background .25s ease;
+    border-radius: 3px;
+}
+
+.hero-button svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.6;
+}
+
+
+/* ======================================
+   SLUŽBY – PC
+====================================== */
+
+.services {
+    background: #fff;
+    padding: 70px 30px 85px;
+}
+
+.services-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.services-heading {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.services-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 9px;
+    color: var(--gold-dark);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.services-eyebrow::before,
+.services-eyebrow::after {
+    content: "";
+    width: 44px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.services-heading h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: -0.8px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.service-card {
+    min-width: 0;
+    background: #fff;
+    box-shadow: 0 5px 22px rgba(0, 0, 0, .12);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.service-card > img {
+    display: block;
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.service-card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 13px 12px 16px;
+    text-align: center;
+}
+
+.service-card h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.15;
+    min-height: 42px;
+    margin-bottom: 3px;
+}
+
+.service-subtitle {
+    font-size: 13px;
+    line-height: 1.3;
+    margin-top: -2px;
+}
+
+.service-price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: auto;
+    padding-top: 13px;
+    margin-bottom: 14px;
+    font-size: 15px;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.service-separator {
+    width: 2px;
+    height: 13px;
+    background: #C99A46;
+}
+
+.service-amount {
+    color: #C99A46;
+    font-weight: 600;
+}
+
+.service-button {
+    min-height: 34px;
+    padding: 0 20px;
+    background: #fff;
+    border: 1.5px solid #C99A46;
+    color: var(--black);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .25s ease, color .25s ease;
+    border-radius: 3px;
+}
+
+.service-button:hover {
+    background: var(--gold);
+    color: #fff;
+}
+
+/* ======================================
+   VÝSLEDKY LYMFOMODELINGU – PC
+====================================== */
+
+.results-container {
+    max-width: 1100px;
+    margin: 15px auto 0;
+    padding-bottom: 75px;
+}
+
+.results-container::after {
+    content: "";
+    display: block;
+    width: 160px;
+    height: 2px;
+    margin: 35px auto 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #b68432,
+        transparent
+    );
+}
+
+.results-heading {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.results-heading h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.results-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    align-items: center;
+}
+
+.results-gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.results-note {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 13px;
+    color: #777;
+}
+
+
+/* ======================================
+   O MNĚ – PC
+====================================== */
+
+.about {
+    background: #E9DCC5;
+    padding: 65px 30px 20px;
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.about-photo {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: 12px 2px 24px rgba(65,45,25,.22);
+}
+
+.about-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(196, 145, 89, 0.12);
+    pointer-events: none;
+}
+
+.about-photo img {
+    display: block;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: center 30%;
+    border-radius: 3px;
+}
+
+.about-content {
+    min-width: 0;
+}
+
+.about-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    color: var(--gold-dark);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.about-eyebrow::before {
+    content: "";
+    width: 35px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.about-content h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 22px;
+}
+
+.about-text {
+    border-left: 2px solid var(--gold);
+    padding-left: 24px;
+}
+
+.about-text p {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.65;
+    margin-bottom: 16px;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* ======================================
+   SALON – PC
+====================================== */
+
+.salon {
+    position: relative;
+    background: #fff;
+    padding: 105px 30px 80px;
+}
+
+.salon::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background: #E9DCC5;
+    clip-path: ellipse(75% 100% at 50% 0%);
+    pointer-events: none;
+}
+
+.salon-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.salon-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.salon-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 9px;
+    color: var(--gold-dark);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.salon-eyebrow::before,
+.salon-eyebrow::after {
+    content: "";
+    width: 44px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.salon-heading h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: -0.8px;
+}
+
+.salon-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    overflow: visible;
+}
+
+.salon-gallery img {
+    display: block;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: center bottom;
+    box-shadow: 0 6px 16px rgba(65, 45, 25, 0.16);
+}
+
+.salon-gallery img:nth-child(even) {
+    transform: translateY(12px);
+}
+
+.salon-gallery::after {
+    content: "";
+    grid-column: 1 / -1;
+    width: 160px;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #b68432,
+        transparent
+    );
+    justify-self: center;
+    margin-top: 35px;
+}
+
+
+/* ======================================
+   KONTAKT – PC
+====================================== */
+
+.contact {
+    position: relative;
+    background: #fff;
+    padding: 45px 30px 45px;
+}
+
+.contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #b68432,
+        transparent
+    );
+}
+
+.contact-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr) 340px;
+    gap: 25px;
+    align-items: stretch;
+}
+
+/* NADPISY */
+
+.contact h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 14px;
+}
+
+/* LEVÝ SLOUPEC */
+
+.contact-info {
+    border-right: 1px solid #dedede;
+    padding-right: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    margin-bottom: 19px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-item svg {
+    width: 21px;
+    height: 21px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: #171717;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.contact-item .contact-icon-dot {
+    fill: #171717;
+    stroke: none;
+}
+
+.contact-item a {
+    transition: color .25s ease;
+}
+
+.contact-item a:hover {
+    color: var(--gold-dark);
+}
+
+/* PROSTŘEDNÍ SLOUPEC – FORMULÁŘ */
+
+.contact-form-wrap {
+    min-width: 0;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    display: block;
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    background: #fff;
+    padding: 7px 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--black);
+    outline: none;
+    transition: border-color .25s ease;
+
+}
+
+.contact-form input {
+    height: 34px;
+}
+
+.contact-form textarea {
+    height: 76px;
+    resize: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--gold);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #333;
+    opacity: 1;
+}
+
+.contact-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    gap: 18px;
+    min-height: 35px;
+    margin-top: 2px;
+    padding: 0 22px;
+    border: 0;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #80551D 0%, #B68432 55%, #C69A4B 100%);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: filter .25s ease;
+}
+
+.contact-submit:hover {
+    filter: brightness(.88);
+}
+
+.contact-submit span {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* PRAVÝ SLOUPEC – MAPA */
+
+.contact-map {
+    position: relative;
+    min-height: 250px;
+    overflow: hidden;
+    border-radius: 3px;
+    background: #f0ece6;
+}
+
+.contact-map iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    border: 0;
+    filter: saturate(0.65) brightness(1.03);
+}
+
+.contact-map::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(233, 220, 197, 0.22);
+    pointer-events: none;
+}
+
+.contact-map-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 13px;
+    background: #fff;
+    box-shadow: 0 3px 12px rgba(0,0,0,.15);
+    border-radius: 3px;
+    white-space: nowrap;
+    font-size: 12px;
+    transition: box-shadow .25s ease;
+}
+
+.contact-map-link:hover {
+    box-shadow: 0 5px 18px rgba(0,0,0,.25);
+}
+
+.contact-map-link strong,
+.contact-map-link small {
+    display: block;
+}
+
+.contact-map-link strong {
+    font-size: 12px;
+}
+
+.contact-map-link small {
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+.contact-map-pin {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+    background: var(--gold);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+}
+
+/* ======================================
+   FOOTER – PC
+====================================== */
+
+.footer {
+    background: #171717;
+    color: #b68432;
+    padding: 12px 30px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+
+
+/* ======================================
+   TABLET – DO 900 PX
+====================================== */
+
+@media (max-width: 900px) {
+
+html {
+    scroll-padding-top: 68px;
+}
+
+    .nav-container {
+    height: 68px;
+    padding: 0 25px;
+    gap: 20px;
+}
+
+.nav-logo img {
+    width: 100px;
+    height: 46px;
+}
+
+    .nav-menu {
+        gap: 22px;
+    }
+
+    .nav-menu a {
+        font-size: 13px;
+    }
+
+    .nav-cta {
+        padding: 0 15px;
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 390px;
+        background-position: center center;
+    }
+
+    .hero-container {
+        padding: 50px 35px 65px;
+    }
+
+    .hero-content {
+        max-width: 450px;
+    }
+
+    .hero h1 {
+    font-size: 40px;
+    line-height: 1.16;
+    letter-spacing: 0;
+}
+
+    .hero-description {
+        max-width: 350px;
+        font-size: 15px;
+    }
+
+
+    /* SLUŽBY – TABLET */
+
+    .services {
+        padding: 60px 25px 50px;
+    }
+
+    .services-heading {
+        margin-bottom: 30px;
+    }
+
+    .services-heading h2 {
+        font-size: 29px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
+    }
+
+    .service-card > img {
+        height: 190px;
+    }
+
+    .service-card-content {
+        padding: 18px 15px 20px;
+    }
+
+    .service-card h3 {
+        font-size: 18px;
+    }
+
+    .service-price {
+    font-size: 15px;
+}
+
+.service-button {
+    min-height: 38px;
+    font-size: 14px;
+}
+
+/* SALON – TABLET */
+
+.salon {
+    padding: 90px 25px 65px;
+}
+
+.salon-heading h2 {
+    font-size: 29px;
+}
+
+.salon-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.salon-gallery img {
+    height: 260px;
+}
+
+/* O MNĚ – TABLET */
+
+.about {
+    padding: 55px 25px;
+}
+
+.about-container {
+    grid-template-columns: 280px 1fr;
+    gap: 35px;
+}
+
+.about-photo img {
+    height: 320px;
+}
+
+.about-content h2 {
+    font-size: 27px;
+}
+
+.about-text {
+    padding-left: 18px;
+}
+
+.about-text p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* KONTAKT – TABLET */
+
+.contact {
+    padding: 45px 25px 55px;
+}
+
+.contact-container {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 30px;
+}
+
+.contact-info {
+    padding-right: 25px;
+}
+
+.contact h2 {
+    font-size: 25px;
+}
+
+.contact-item {
+    font-size: 15px;
+    gap: 12px;
+}
+
+.contact-map {
+    grid-column: 1 / -1;
+    min-height: 300px;
+}
+
+.contact-map iframe {
+    min-height: 300px;
+}
+
+/* FOOTER – TABLET */
+
+.footer {
+    padding: 12px 25px;
+}
+
+.footer-container {
+    font-size: 11px;
+    gap: 15px;
+}
+/* VÝSLEDKY – TABLET */
+
+.results-container {
+    margin-top: 15px;
+    padding-bottom: 60px;
+}
+
+.results-heading h2 {
+    font-size: 27px;
+}
+
+.results-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+
+}
+
+/* ======================================
+   MOBIL – DO 650 PX
+====================================== */
+
+@media (max-width: 650px) {
+
+html {
+    scroll-padding-top: 64px;
+}
+
+    .nav-container {
+    height: 64px;
+    padding: 0 20px;
+}
+
+.nav-logo img {
+    width: 95px;
+    height: 44px;
+}
+
+    .nav-cta {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        border: 0;
+        background: transparent;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        cursor: pointer;
+        z-index: 1002;
+    }
+
+    .nav-toggle span {
+        width: 25px;
+        height: 2px;
+        background: var(--black);
+        transition: transform .3s ease, opacity .3s ease;
+    }
+
+    .nav-toggle.open span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .nav-toggle.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.open span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 25px 30px 35px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        box-shadow: 0 12px 20px rgba(0,0,0,.07);
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: opacity .25s ease, transform .25s ease,
+                    visibility .25s ease;
+    }
+
+    .nav-menu.open {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .nav-menu a {
+        font-size: 16px;
+        padding: 10px 0;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    .hero {
+        min-height: 560px;
+        align-items: flex-start;
+        background-position: 62% center;
+    }
+
+    .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            180deg,
+            rgba(255,250,246,.97) 0%,
+            rgba(255,250,246,.93) 35%,
+            rgba(255,250,246,.25) 75%,
+            transparent 100%
+        );
+    }
+
+    .hero-container {
+        padding: 55px 25px 80px;
+    }
+
+    .hero-content {
+        max-width: 380px;
+    }
+
+    .hero-eyebrow {
+        font-size: 12px;
+        letter-spacing: 2px;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+
+    .hero-eyebrow::after {
+        width: 38px;
+    }
+
+    .hero h1 {
+    font-size: clamp(30px, 7.5vw, 39px);
+    line-height: 1.2;
+    letter-spacing: 0;
+    margin-bottom: 20px;
+}
+
+    .hero-description {
+        max-width: 310px;
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 26px;
+    }
+
+    .hero-button {
+        min-height: 47px;
+        font-size: 14px;
+        padding: 0 22px;
+        gap: 18px;
+    }
+
+
+    /* SLUŽBY – MOBIL */
+
+    .services {
+        padding: 50px 20px 55px;
+    }
+
+    .services-heading {
+        margin-bottom: 28px;
+    }
+
+    .services-eyebrow {
+        font-size: 12px;
+        letter-spacing: 2px;
+        gap: 10px;
+    }
+
+    .services-eyebrow::before,
+    .services-eyebrow::after {
+        width: 32px;
+    }
+
+    .services-heading h2 {
+        font-size: clamp(24px, 6vw, 29px);
+        line-height: 1.35;
+        letter-spacing: -0.5px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .service-card > img {
+        height: 210px;
+    }
+
+    .service-card-content {
+        padding: 18px 18px 22px;
+    }
+
+    .service-card h3 {
+        font-size: 19px;
+        min-height: 0;
+        margin-bottom: 8px;
+    }
+
+    .service-price {
+    font-size: 15px;
+    padding-top: 20px;
+    margin-bottom: 18px;
+}
+
+.service-button {
+    min-height: 40px;
+    padding: 0 24px;
+    font-size: 14px;
+}
+
+/* SALON – MOBIL */
+
+.salon {
+    padding: 80px 20px 55px;
+}
+
+.salon-heading {
+    margin-bottom: 28px;
+}
+
+.salon-eyebrow {
+    font-size: 12px;
+    gap: 10px;
+}
+
+.salon-eyebrow::before,
+.salon-eyebrow::after {
+    width: 32px;
+}
+
+.salon-heading h2 {
+    font-size: clamp(24px, 6vw, 29px);
+    line-height: 1.35;
+    letter-spacing: -0.5px;
+}
+
+.salon-gallery {
+    grid-template-columns: 1fr;
+}
+
+.salon-gallery img {
+    height: 280px;
+}
+
+/* O MNĚ – MOBIL */
+
+.about {
+    padding: 50px 20px 55px;
+}
+
+.about-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    max-width: 420px;
+}
+
+.about-photo {
+    max-width: 340px;
+    margin: 0 auto;
+}
+
+.about-photo img {
+    height: 350px;
+    object-position: center 30%;
+}
+
+.about-eyebrow {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.about-content h2 {
+    font-size: clamp(24px, 6vw, 29px);
+    line-height: 1.35;
+    margin-bottom: 20px;
+}
+
+.about-text {
+    padding-left: 20px;
+}
+
+.about-text p {
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 16px;
+}
+
+
+/* KONTAKT – MOBIL */
+
+.contact {
+    padding: 45px 20px 55px;
+}
+
+.contact-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    max-width: 420px;
+}
+
+.contact-info {
+    border-right: none;
+    border-bottom: 1px solid #dedede;
+    padding-right: 0;
+    padding-bottom: 30px;
+}
+
+.contact h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    font-size: 16px;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.contact-item svg {
+    width: 22px;
+    height: 22px;
+}
+
+.contact-form {
+    gap: 10px;
+}
+
+.contact-form input {
+    height: 40px;
+}
+
+.contact-form textarea {
+    height: 110px;
+    resize: none;
+}
+
+.contact-submit {
+    min-height: 42px;
+    font-size: 14px;
+}
+
+.contact-map {
+    grid-column: auto;
+    min-height: 280px;
+}
+
+.contact-map iframe {
+    min-height: 280px;
+}
+
+/* FOOTER – MOBIL */
+
+.footer {
+    padding: 15px 20px;
+}
+
+.footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+    font-size: 12px;
+}
+/* VÝSLEDKY – MOBIL */
+
+.results-container {
+    margin-top: 15px;
+    padding-bottom: 50px;
+}
+
+.results-heading h2 {
+    font-size: 25px;
+}
+
+.results-gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.results-note {
+    font-size: 12px;
+}
+
+}
+
+/* ======================================
+   NAJÍŽDĚCÍ ANIMACE – PC
+====================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.22, 1, .36, 1);
+}
+
+.reveal.reveal-left {
+    transform: translateX(-35px);
+}
+
+.reveal.reveal-right {
+    transform: translateX(35px);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* HERO – JEMNÉ OBJEVENÍ FOTOGRAFIE */
+
+.hero {
+    animation: heroPhotoFade 1.5s ease both;
+}
+
+@keyframes heroPhotoFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Hero – postupné objevení */
+
+.hero-content > * {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: heroReveal .8s ease forwards;
+}
+
+.hero-content > :nth-child(1) {
+    animation-delay: .15s;
+}
+
+.hero-content > :nth-child(2) {
+    animation-delay: .3s;
+}
+
+.hero-content > :nth-child(3) {
+    animation-delay: .45s;
+}
+
+.hero-content > :nth-child(4) {
+    animation-delay: .6s;
+}
+
+@keyframes heroReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ======================================
+   TABLET – DO 900 PX
+====================================== */
+
+/* Stejné jemné animace jako na PC. */
+
+
+/* ======================================
+   MOBIL – DO 650 PX
+====================================== */
+
+/* Kratší posun, aby stránka neposkakovala. */
+
+@media (max-width: 650px) {
+    .reveal {
+        transform: translateY(20px);
+    }
+
+    .reveal.reveal-left,
+    .reveal.reveal-right {
+        transform: translateY(20px);
+    }
+}
+
+/* ======================================
+   OMEZENÍ ANIMACÍ
+====================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-delay: 0ms !important;
+        transition-duration: .01ms !important;
+    }
+
+    .reveal,
+    .hero-content > * {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ======================================
+     NAVBAR
+====================================== -->
+
+<header class="site-header">
+    <div class="nav-container">
+
+        <a href="#domu" class="nav-logo" aria-label="VK Beauty Salon – úvod">
+            <img src="logo.jpg" alt="VK Beauty Salon">
+        </a>
+
+        <nav class="nav-menu" id="navMenu" aria-label="Hlavní navigace">
+            <a href="#domu">Úvod</a>
+            <a href="#sluzby">Služby</a>
+            <a href="#omne">O mně</a>
+            <a href="#salon">Salon</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+
+        <a href="#kontakt" class="nav-cta">Objednat se</a>
+
+        <button class="nav-toggle" id="navToggle"
+                aria-label="Otevřít menu"
+                aria-expanded="false"
+                aria-controls="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+</header>
+
+<!-- ======================================
+     HERO
+====================================== -->
+
+<section class="hero" id="domu">
+    <div class="hero-photo-reveal"></div>
+    <div class="hero-container">
+        <div class="hero-content">
+
+            <div class="hero-eyebrow">
+                VK BEAUTY SALON
+            </div>
+
+            <h1>
+                Masáže<br>
+                a formování postavy
+            </h1>
+
+            <p class="hero-description">
+                Profesionální péče pro krásnější kontury těla,
+                pevnější pokožku a přirozenou lehkost.
+            </p>
+
+            <a href="#sluzby" class="hero-button">
+                Prohlédnout služby
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 12h15M13 6l6 6-6 6"/>
+                </svg>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ======================================
+     SLUŽBY
+====================================== -->
+
+<section class="services" id="sluzby">
+    <div class="services-container">
+
+        <div class="services-heading">
+            <div class="services-eyebrow">
+                <span>MOJE SLUŽBY</span>
+            </div>
+            <h2>Vyberte si z nabídky ošetření</h2>
+        </div>
+
+        <div class="services-grid">
+
+<!-- LYMFOMODELING -->
+            <article class="service-card">
+                <img src="lymfomodeling.webp"
+                     alt="Lymfomodeling"
+                     loading="lazy">
+
+                <div class="service-card-content">
+                    <h3>Lymfomodeling</h3>
+
+                    <div class="service-price">
+                        <span>60–90 min</span>
+                        <span class="service-separator"></span>
+                        <span class="service-amount">2 800 Kč</span>
+                    </div>
+
+                    <button type="button" class="service-button">
+                        Více o ošetření
+                    </button>
+                </div>
+            </article>
+
+            <!-- ANTICELULITIDNÍ MASÁŽ -->
+            <article class="service-card">
+                <img src="celulitida.webp"
+                     alt="Anticelulitidní masáž"
+                     loading="lazy">
+
+                <div class="service-card-content">
+                    <h3>Anticelulitidní<br>masáž</h3>
+
+                    <div class="service-price">
+                        <span>60 min</span>
+                        <span class="service-separator"></span>
+                        <span class="service-amount">1 200 Kč</span>
+                    </div>
+
+                    <button type="button" class="service-button">
+                        Více o ošetření
+                    </button>
+                </div>
+            </article>
+
+            <!-- MADEROTERAPIE -->
+            <article class="service-card">
+                <img src="maderoterapie.webp"
+                     alt="Maderoterapie obličeje a dekoltu"
+                     loading="lazy">
+
+                <div class="service-card-content">
+                    <h3>Maderoterapie<br>obličeje a dekoltu</h3>
+
+                    <div class="service-price">
+                        <span>30 min</span>
+                        <span class="service-separator"></span>
+                        <span class="service-amount">600 Kč</span>
+                    </div>
+
+                    <button type="button" class="service-button">
+                        Více o ošetření
+                    </button>
+                </div>
+            </article>
+
+            <!-- VACUSLIM 48 -->
+            <article class="service-card">
+                <img src="vacuslim.webp"
+                     alt="VacuSlim 48 – odvodňovací termo zábal"
+                     loading="lazy">
+
+                <div class="service-card-content">
+                    <h3>VacuSlim 48</h3>
+
+                    <div class="service-price">
+                        <span>45 min</span>
+                        <span class="service-separator"></span>
+                        <span class="service-amount">1 300 Kč</span>
+                    </div>
+
+                    <button type="button" class="service-button">
+                        Více o ošetření
+                    </button>
+                </div>
+            </article>
+
+            
+
+        </div>
+    </div>
+</section>
+
+<!-- VÝSLEDKY LYMFOMODELINGU -->
+
+<div class="results-container">
+
+    <div class="results-heading">
+        <div class="services-eyebrow">
+            <span>VÝSLEDKY OŠETŘENÍ</span>
+        </div>
+        <h2>Výsledky lymfomodelingu</h2>
+    </div>
+
+    <div class="results-gallery">
+        <img src="lymfomodelaz1.jpg" alt="Lymfomodeling – výsledek před a po" loading="lazy">
+        <img src="lymfomodelaz4.jpg" alt="Lymfomodeling – výsledek před a po" loading="lazy">
+        <img src="lymfomodelaz2.jpg" alt="Lymfomodeling – výsledek před a po" loading="lazy">
+    </div>
+
+
+</div>
+
+<!-- ======================================
+     O MNĚ
+====================================== -->
+
+<section class="about" id="omne">
+    <div class="about-container">
+
+        <div class="about-photo">
+            <img src="veronika-kristkova.webp"
+                 alt="Veronika Křístková – VK Beauty Salon"
+                 loading="lazy">
+        </div>
+
+        <div class="about-content">
+
+            <div class="about-eyebrow">
+                <span>O MNĚ</span>
+            </div>
+
+            <h2>VK BEAUTY SALON</h2>
+
+            <div class="about-text">
+                <p>
+                    Masírovat jsem chtěla už od dětství. Dnes je to moje vášeň
+                    a práce, která mě opravdu baví.
+                </p>
+
+                <p>
+                    Ráda pomáhám ženám formovat kontury těla. Každé tělo je jiné
+                    a reaguje po svém, proto ke každé ženě přistupuji
+                    individuálně a srdcem.
+                </p>
+
+                <p>
+                    Mám radost, že mohu dělat to, co mě naplňuje,
+                    a zároveň pomáhat ženám cítit se krásnější
+                    a sebevědomější.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ======================================
+     SALON – INTERIÉR
+====================================== -->
+
+<section class="salon" id="salon">
+    <div class="salon-container">
+
+        <div class="salon-heading">
+            <div class="salon-eyebrow">
+                <span>INTERIÉR</span>
+            </div>
+
+            <h2>Nahlédněte do mého salonu</h2>
+        </div>
+
+        <div class="salon-gallery">
+            <img src="interier1.webp" alt="Posezení v salonu VK Beauty Salon" loading="lazy">
+            <img src="interier2.webp" alt="Masážní místnost VK Beauty Salon" loading="lazy">
+            <img src="interier3.webp" alt="Interiér kosmetického salonu" loading="lazy">
+            <img src="interier4.webp" alt="Masážní lehátko v salonu" loading="lazy">
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ======================================
+     KONTAKT
+====================================== -->
+
+<section class="contact" id="kontakt">
+    <div class="contact-container">
+
+        <!-- LEVÝ SLOUPEC – KONTAKTNÍ ÚDAJE -->
+        <div class="contact-info">
+            <h2>Kontakt</h2>
+
+            <div class="contact-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
+                    <circle cx="12" cy="10" r="2.5"/>
+                </svg>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=Svojs%C3%ADkova%201348%2C%20Mlad%C3%A1%20Boleslav"
+                   target="_blank" rel="noopener noreferrer">
+                    RC U Souseda, Svojsíkova 1348<br>
+                    293 02 Mladá Boleslav
+                </a>
+            </div>
+
+            <div class="contact-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.7L7.1 10a16 16 0 0 0 6.9 6.9l1.6-1.9a2 2 0 0 1 1.7-.6l3 .5a2 2 0 0 1 1.7 2Z"/>
+                </svg>
+                <a href="tel:+420737609036">+420 737 609 036</a>
+            </div>
+
+            <div class="contact-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="5"/>
+                    <circle cx="12" cy="12" r="4"/>
+                    <circle cx="18" cy="6" r="1" class="contact-icon-dot"/>
+                </svg>
+                <a href="https://www.instagram.com/vk.beauty.salon/"
+                   target="_blank" rel="noopener noreferrer">
+                    vk.beauty.salon
+                </a>
+            </div>
+
+            <div class="contact-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="5"/>
+                    <path d="M14 22v-9h3l.5-4H14V7c0-1.1.4-2 2-2h2V2.3A20 20 0 0 0 15.5 2C12.5 2 11 3.8 11 7v2H8v4h3v9"/>
+                </svg>
+                <a href="https://www.facebook.com/profile.php?id=61583876902487"
+                   target="_blank" rel="noopener noreferrer">
+                    VK.beauty.salon
+                </a>
+            </div>
+        </div>
+
+        <!-- PROSTŘEDNÍ SLOUPEC – FORMULÁŘ -->
+        <div class="contact-form-wrap">
+            <h2>Napište mi</h2>
+
+            <form class="contact-form">
+                <input type="text"
+                       name="name"
+                       placeholder="Vaše jméno"
+                       aria-label="Vaše jméno">
+
+                <input type="email"
+                       name="email"
+                       placeholder="E-mail"
+                       aria-label="E-mail">
+
+                <textarea name="message"
+                          placeholder="Zpráva"
+                          aria-label="Zpráva"></textarea>
+
+                <button type="button" class="contact-submit">
+                    Odeslat zprávu
+                    <span aria-hidden="true">→</span>
+                </button>
+            </form>
+        </div>
+
+        <!-- PRAVÝ SLOUPEC – MAPA -->
+        <div class="contact-map">
+            <iframe
+                title="Mapa – VK Beauty Salon, Svojsíkova 1348, Mladá Boleslav"
+                src="https://maps.google.com/maps?q=Svojs%C3%ADkova%201348%2C%20Mlad%C3%A1%20Boleslav&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <a class="contact-map-link"
+               href="https://www.google.com/maps/search/?api=1&amp;query=Svojs%C3%ADkova%201348%2C%20Mlad%C3%A1%20Boleslav"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Otevřít adresu VK Beauty Salon v Google Mapách">
+                <span class="contact-map-pin" aria-hidden="true"></span>
+                <span>
+                    <strong>VK Beauty Salon</strong>
+                    <small>RC U Souseda</small>
+                </span>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- ======================================
+     FOOTER
+====================================== -->
+
+<footer class="footer">
+    <div class="footer-container">
+        <span>IČO: 23556986</span>
+
+        <span>© 2026 VK Beauty Salon. Všechna práva vyhrazena.</span>
+
+        <span>Design by ZajaIT</span>
+    </div>
+</footer>
+
+
+<script>
+/* ======================================
+   MOBILNÍ MENU
+====================================== */
+
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navMenu');
+
+function closeMenu() {
+    navToggle.classList.remove('open');
+    navMenu.classList.remove('open');
+    document.body.classList.remove('menu-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Otevřít menu');
+}
+
+navToggle.addEventListener('click', () => {
+    const isOpen = navMenu.classList.contains('open');
+
+    if (isOpen) {
+        closeMenu();
+    } else {
+        navToggle.classList.add('open');
+        navMenu.classList.add('open');
+        document.body.classList.add('menu-open');
+        navToggle.setAttribute('aria-expanded', 'true');
+        navToggle.setAttribute('aria-label', 'Zavřít menu');
+    }
+});
+
+navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
+
+document.addEventListener('click', (event) => {
+    if (
+        navMenu.classList.contains('open') &&
+        !navMenu.contains(event.target) &&
+        !navToggle.contains(event.target)
+    ) {
+        closeMenu();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMenu();
+});
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 650) closeMenu();
+});
+
+/* ======================================
+   NAJÍŽDĚCÍ ANIMACE PŘI SCROLLU
+====================================== */
+
+const revealGroups = [
+    {
+        selector: '.services-heading',
+        direction: ''
+    },
+    {
+        selector: '.service-card',
+        direction: ''
+    },
+{
+    selector: '.results-heading, .results-gallery img, .results-note',
+    direction: ''
+},
+    {
+        selector: '.about-photo',
+        direction: 'reveal-left'
+    },
+    {
+        selector: '.about-content',
+        direction: 'reveal-right'
+    },
+    {
+        selector: '.salon-heading',
+        direction: ''
+    },
+    {
+        selector: '.salon-gallery img',
+        direction: ''
+    },
+    {
+        selector: '.contact-info, .contact-form-wrap, .contact-map',
+        direction: ''
+    }
+    
+];
+
+const revealElements = [];
+
+revealGroups.forEach(group => {
+    document.querySelectorAll(group.selector).forEach(element => {
+        element.classList.add('reveal');
+
+        if (group.direction) {
+            element.classList.add(group.direction);
+        }
+
+        revealElements.push(element);
+    });
+});
+
+if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.08,
+        rootMargin: '0px 0px -25px 0px'
+    });
+
+    revealElements.forEach(element => {
+        revealObserver.observe(element);
+    });
+} else {
+    revealElements.forEach(element => {
+        element.classList.add('visible');
+    });
+}
+</script>
+
+</body>
+</html>
