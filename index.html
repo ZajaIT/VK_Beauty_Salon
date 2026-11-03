@@ -1205,26 +1205,15 @@ html {
     body.menu-open {
         overflow: hidden;
     }
-
-    .hero {
-        min-height: 560px;
-        align-items: flex-start;
-        background-position: 62% center;
-    }
-
-    .hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-            180deg,
-            rgba(255,250,246,.97) 0%,
-            rgba(255,250,246,.93) 35%,
-            rgba(255,250,246,.25) 75%,
-            transparent 100%
-        );
-    }
-
+   
+.hero {
+    min-height: 560px;
+    align-items: flex-start;
+    background-image: url("hero-mobil.webp");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
     .hero-container {
         padding: 55px 25px 80px;
     }
