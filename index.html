@@ -493,6 +493,9 @@ button {
     object-position: center 30%;
     border-radius: 3px;
 }
+   .about-photo-mobile {
+    display: none;
+}
 
 .about-content {
     min-width: 0;
@@ -1375,12 +1378,33 @@ html {
 }
 
 .about-photo {
-    max-width: 340px;
-    margin: 0 auto;
+    display: none;
 }
 
-.about-photo img {
-    height: 350px;
+.about-photo-mobile {
+    display: block;
+    position: relative;
+    width: 240px;
+    max-width: 100%;
+    margin: 0 auto 30px;
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: 12px 2px 24px rgba(65,45,25,.22);
+}
+
+.about-photo-mobile::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(196, 145, 89, 0.12);
+    pointer-events: none;
+}
+
+.about-photo-mobile img {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
     object-position: center 30%;
 }
 
@@ -1438,9 +1462,28 @@ html {
     position: relative;
 }
 
+/* TELEFON, INSTAGRAM, FACEBOOK – MOBIL */
+
 .contact-info .contact-item:not(:first-of-type) svg {
     position: absolute;
-    right: calc(50% + 70px);
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Telefon */
+.contact-info .contact-item:nth-of-type(2) svg {
+    margin-left: -72px;
+}
+
+/* Instagram */
+.contact-info .contact-item:nth-of-type(3) svg {
+    margin-left: -65px;
+}
+
+/* Facebook */
+.contact-info .contact-item:nth-of-type(4) svg {
+    margin-left: -67px;
 }
 
 .contact-info .contact-item:first-of-type {
@@ -1897,7 +1940,13 @@ html {
 
             <h2>VK BEAUTY SALON</h2>
 
-            <div class="about-text">
+<div class="about-photo-mobile">
+    <img src="veronika-kristkova.webp"
+         alt="Veronika Křístková – VK Beauty Salon"
+         loading="lazy">
+</div>
+
+<div class="about-text">
                 <p>
                     Masírovat jsem chtěla už od dětství. Dnes je to moje vášeň
                     a práce, která mě opravdu baví.
